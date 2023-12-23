@@ -36,7 +36,7 @@
       <p class="text-base sm:text-lg md:text-xl">
         My <span class="text-violet-400">favourite tech</span> includes JavaScript (React), CSS,  SASS, Node.js + Express.js & PostgreSQL.
       </p>
-      <a class="blueShadow mx-auto lg:mr-auto text-base sm:text-lg md:text-xl poppins relative overflow-hidden px-6 py-3 group rounded-full bg-white text-slate-950" href="https://www.cbc.ca/news" target="_blank">
+      <a class="blueShadow mx-auto lg:mr-auto lg:ml-0 text-base sm:text-lg md:text-xl poppins relative overflow-hidden px-6 py-3 group rounded-full bg-white text-slate-950" href="https://www.cbc.ca/news" target="_blank">
         
         <div class="absolute top-0 right-full w-full h-full bg-violet-400 opacity-20 group-hover:translate-x-full z-0 duration-200"
        />
@@ -98,11 +98,11 @@
     </div>
     {/each}
   </div>
-  <h5 class={" text-2xl sm:text-3xl font-semibold text-center poppins "}>The <span class="text-violet-400">Complete</span> Package</h5>
+  <h5 class={" text-2xl sm:text-3xl font-semibold text-center poppins "}>The <span class="text-violet-400 poppins">Complete</span> Package</h5>
   
   <div class="flex flex-col overflow-x-scroll gap-10 max-w-[800px] mx-auto w-full">
     <table class="bg-white text-slate-700 rounded text-center">
-      <thead class={"border-b border-solid border-slate-200 "}>
+      <thead class="border-b border-solid border-slate-200 ">
         <tr class="">
           <th />
           <th class="whitespace-nowrap p-2 px-4">Candidate #1</th>
