@@ -2,8 +2,8 @@
   import Step from "../components/Step.svelte"
   let steps = [
     {name: 'unitConverter', icon: 'fa-solid fa-calculator', href:'https://unit-converter-ashy.vercel.app'},
-    {name: 'justTakeMyCar', icon: "fa-solid fa-car"},
-    {name: 'passwordKeepR', icon: 'fa-solid fa-diagram-project'},
+    {name: 'Twisted Stitch', icon: "fa-solid fa-car", href:'https://twisted-stitch.vercel.app'},
+    {name: 'West Coast Mushrooms', icon: 'fa-solid fa-diagram-project', href:'https://west-coast-mushrooms-psi-inky-50.vercel.app'},
   ] 
   let benefits = [
     {
@@ -30,11 +30,13 @@
 
     <div class="flex flex-col lg:justify-center text-center lg:text-left gap-6 md:gap-8 lg:gap-10">
       <h2 class="font-semibold text-4xl sm:text-5xl md:text-6xl">
-        Hi! I'm <span class="poppins text-violet-400">Anastasia</span> Kuzmin <br/>Full Stack <span class="poppins text-violet-400">Developer</span>
+       Welcome to <span class="poppins text-violet-400">PortiaBella Designs</span> by Anastasia 
+      </h2>
+      <h2 class="font-semibold text-4xl sm:text-4xl md:text-4xl"><span class="poppins text-violet-400">Full Stack Web Development</span> and More
       </h2>
       
       <p class="text-base sm:text-lg md:text-xl">
-        My <span class="text-violet-400">favourite tech</span> includes JavaScript (React), CSS,  SASS, Node.js + Express.js & PostgreSQL.
+        Scroll down to see my <span class="text-violet-400">website designs, science research experience, photography and clothing designs.</span>
       </p>
       <a class="blueShadow mx-auto lg:mr-auto lg:ml-0 text-base sm:text-lg md:text-xl poppins relative overflow-hidden px-6 py-3 group rounded-full bg-white text-slate-950" href="https://www.cbc.ca/news" target="_blank">
         
@@ -44,33 +46,36 @@
       </a>
     </div>
     <div class="relative shadow-2xl grid place-items-center">
-      <img src={"images/spider.png"} alt="Profile image" 
+      <img src={"images/logo1.png"} alt="logo1"
       class="object-cover z-[2] max-h-[70hv]"/>
     </div>
   </section>
 
   <section id="projects" class="py-20 lg:py-32 flex flex-col gap-24">
     <div class="flex flex-col gap-2 text-center">
-      <h6 class="text-lg sm:text-xl md:text-2xl">
-        A few of my creative endeavors.
-      </h6>
-      <h3 class="font-semibold text-3xl sm:text-4xl md:text-5xl">
-        Curious to <span class="poppins text-violet-400">see</span> my work?
-      </h3>
+      <h2 class="font-semibold text-3xl sm:text-4xl md:text-6xl">
+        <span class="poppins text-violet-400">Websites</span> 
+      </h2>
 
     </div>
-      <a href="https://unit-converter-ashy.vercel.app" target="_blank" 
+      <a href="https://github.com/Datazyme" target="_blank" 
       class="mx-auto px-4 py-2 rounded-md border border-solid border-white flex items-center gap-2 -mb-4 sm:-mb-0 -mt-10 hover:border-violet-700 duration-200">
       <!-- <i class="fa-regular fa-circle-play"></i> -->
-      <p>Unit Converter</p>
+      <p>GitHub</p>
     </a>
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10">
       <Step step={steps[0]}>
+        <img src={"images/unitConverter.png"} alt="unitConverter"
+        class="object-cover z-[2] max-h-[70hv]"/>
         <p>unitConverter is an app which converts a variety of units of measure. It was created with <strong class="text-violet-400">Javascript, NodeJS + Express, SASS and jQuery.</strong> It is hosted on <strong class="text-violet-400">Vercel</strong></p>
       </Step>
       <Step step={steps[1]}>
+        <img src={"images/twistedStitch.png"} alt="twistedStitch"
+        class="object-cover z-[2] max-h-[70hv]"/>
         <p>unitConverter is an app which converts a variety of units of measure. It was created with <strong class="text-violet-400">Javascript, NodeJS + Express, SASS and jQuery.</strong> It is hosted on <strong class="text-violet-400">Vercel</strong></p></Step>
       <Step step={steps[2]}>
+        <img src={"images/westCoastMushrooms.png"} alt="westCoastMushrooms"
+        class="object-cover z-[2] max-h-[70hv]"/>
         <p>unitConverter is an app which converts a variety of units of measure. It was created with <strong class="text-violet-400">Javascript, NodeJS + Express, SASS and jQuery.</strong> It is hosted on <strong class="text-violet-400">Vercel</strong></p>
       </Step>
     </div>
