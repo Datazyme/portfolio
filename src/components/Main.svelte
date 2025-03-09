@@ -1,6 +1,8 @@
 <script>
   import Step from "../components/Step.svelte"
   import Publications from "./Publications.svelte";
+
+  // List of website objects
   let steps = [
     {name: 'unitConverter', icon: 'fa-solid fa-calculator', href:'https://unit-converter-ashy.vercel.app'},
     {name: 'Twisted Stitch', icon: "fa-solid fa-shirt", href:'https://twisted-stitch.vercel.app'},
@@ -8,6 +10,7 @@
     {name: 'To Do List', icon: "fa-solid fa-frog", href:'https://todo-remult-nextjs-anastasias-projects-8c761283.vercel.app/api/auth/signin?callbackUrl=https%3A%2F%2Ftodo-remult-nextjs-anastasias-projects-8c761283.vercel.app%2F'},
   ];
 
+  // List of education objects
   let education = [
     {
       metric: "10x",
@@ -27,6 +30,7 @@
     },
   ];
 
+  // List of publication objects
   let publications = [
     {
       title:"Transcription shapes genome-wide histone acetylation patterns.",
@@ -38,7 +42,7 @@
     },
     {
       title: "The limit to evolutionary rescue depends on ploidy in yeast exposed to nystatin.",
-      journal: "Canadian Journal of Microbiology.",
+      journal: "Canadian Journal of Microbiology",
       citation: "Can J Microbiol. 2024 Sep 1;70(9):394-404. doi: 10.1139/cjm-2023-0235. Epub 2024 Jun 14. PMID: 38875715.",
       abstractabbr: "The number of copies of each chromosome, or ploidy, of an organism is a major genomic factor affecting adaptation.",
       href: "https://cdnsciencepub.com/doi/full/10.1139/cjm-2023-0235?rfr_dat=cr_pub++0pubmed&url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org",
@@ -46,7 +50,7 @@
     },
     {
       title: "Too Much of a Good Thing: The Unique and Repeated Paths Toward Copper Adaptation.",
-      journal: "Genetics.",
+      journal: "Genetics",
       citation: "2015 Feb;199(2):555-71. doi: 10.1534/genetics.114.171124. Epub 2014 Dec 17. PMID: 25519894; PMCID: PMC4317662.",
       abstractabbr: "Copper is a micronutrient essential for growth due to its role as a cofactor in enzymes involved in respiration, defense against oxidative damage, and iron uptake.",
       href: "https://academic.oup.com/genetics/article/199/2/555/5935832",
@@ -54,7 +58,7 @@
     },
     {
       title: "Loss-of-heterozygosity facilitates passage through Haldane’s sieve for Saccharomyces cerevisiae undergoing adaptation",
-      journal: "Nature Communications.",
+      journal: "Nature Communications",
       citation: "Nat Commun. 2014 May 7;5:3819. doi: 10.1038/ncomms4819. PMID: 24804896.",
       abstractabbr: "Haldane's sieve posits that the majority of beneficial mutations that contribute to adaptation should be dominant, as these are the mutations most likely to establish and spread when rare.",
       href: "https://www.nature.com/articles/ncomms4819",
@@ -62,7 +66,7 @@
     },
     {
       title: "Identification of Potentially Damaging Amino Acid Substitutions Leading to Human Male Infertility",
-      journal: "Biology of Reproduction.",
+      journal: "Biology of Reproduction",
       citation: "Biol Reprod. 2009 Aug;81(2):319-26. doi: 10.1095/biolreprod.109.076000. Epub 2009 Apr 15. PMID: 19369647; PMCID: PMC2849822.",
       abstractabbr: "There are a number of known genetic alterations found in men with nonobstructive azoospermia, or testicular failure, such as Y microdeletions and cytogenetic abnormalities.",
       href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2849822/",
@@ -70,14 +74,60 @@
     },
     {
       title: "The PcG Gene Sfmbt2 is Paternally Expressed in Extraembryonic Tissues.",
-      journal: "Gene Expression Patterns.",
+      journal: "Gene Expression Patterns",
       citation: "Gene Expr Patterns. 2008 Jan;8(2):107-16. doi: 10.1016/j.modgep.2007.09.005. Epub 2007 Oct 9. PMID: 18024232; PMCID: PMC2220043.",
       abstractabbr: "Genomic imprinting has dramatic effects on placental development, as has been clearly observed in interspecific hybrid, somatic cell nuclear transfer, and uniparental embryos",
       href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2220043/",
       abstract: " In fact, the earliest defects in uniparental embryos are evident first in the extraembryonic trophoblast. We performed a microarray comparison of gynogenetic and androgenetic mouse blastocysts, which are predisposed to placental pathologies, to identify imprinted genes. In addition to identifying a large number of known imprinted genes, we discovered that the Polycomb group (PcG) gene Sfmbt2 is imprinted. Sfmbt2 is expressed preferentially from the paternal allele in early embryos, and in later stage extraembryonic tissues. A CpG island spanning the transcriptional start site is differentially methylated on the maternal allele in e14.5 placenta. Sfmbt2 is located on proximal chromosome 2, in a region known to be imprinted, but for which no genes had been identified until now. This possibly identifies a new imprinted domain within the murine genome. We further demonstrate that murine SFMBT2 protein interacts with the transcription factor YY1, similar to the Drosophila PHO-RC.",
     },
   ];
+  
+  // Match game
+
+  let initialCards = [
+    { id: 1, value: "🍎", matched: false },
+    { id: 2, value: "🍌", matched: false },
+    { id: 3, value: "🍇", matched: false },
+    { id: 4, value: "🍉", matched: false },
+    { id: 5, value: "🍎", matched: false },
+    { id: 6, value: "🍌", matched: false },
+    { id: 7, value: "🍇", matched: false },
+    { id: 8, value: "🍉", matched: false }
+  ];
+
+  let cards = [];
+  let selected = [];
+  let moves = 0;
+
+  function shuffle(array) {
+    return array.sort(() => Math.random() - 0.5);
+  }
+
+  function resetGame() {
+    cards = shuffle([...initialCards.map(card => ({ ...card }))]); // Reset and shuffle
+    selected = [];
+    moves = 0;
+  }
+
+  function selectCard(card) {
+    if (selected.length < 2 && !selected.includes(card) && !card.matched) {
+      selected = [...selected, card];
+    }
+
+    if (selected.length === 2) {
+      moves++;
+      if (selected[0].value === selected[1].value) {
+        selected[0].matched = true;
+        selected[1].matched = true;
+      }
+      setTimeout(() => (selected = []), 1000);
+    }
+  }
+  resetGame(); // Initialize the game on load
+  
 </script>
+
+
 <!--- _blank opens up link in a new page  -->
 <main class="flex flex-col flex-1 p-4">
   <section id="introPage" class="grid grid-cols-1 lg:grid-cols-2 gap-10 py-8 sm:py-14">
@@ -97,6 +147,7 @@
     </div>
   </section>
 
+<!--List of my website projects -->
   <section id="projects" class="py-20 lg:py-32 flex flex-col gap-24">
     <div class="flex flex-col gap-2 text-center relative before:absolute before:top-0 before:left-0 before:w-2/3 before:h-1.5 before:bg-violet-700 after:absolute after:bottom-0 after:right-0 after:w-2/3 after:h-1.5 after:bg-violet-700 py-4">
       <h2 class="font-semibold text-3xl sm:text-4xl md:text-6xl text-center">My <span class="poppins text-violet-400">Websites</span></h2>
@@ -129,6 +180,8 @@
     </div>
   </section>
 
+
+<!-- List of my education -->
   <section id="education" class="py-20 pt-10 lg:pt-16 lg:py-32 flex flex-col gap-16 sm:gap-20 md:gap-24 relative">
     <div class="flex flex-col gap-2 text-center relative before:absolute before:top-0 before:left-0 before:w-2/3 before:h-1.5 before:bg-violet-700 after:absolute after:bottom-0 after:right-0 after:w-2/3 after:h-1.5 after:bg-violet-700 py-4">
       <h2 class="font-semibold text-3xl sm:text-4xl md:text-6xl text-center">My <span class="poppins text-violet-400">Education</span></h2>
@@ -151,6 +204,8 @@
     </div>
   </section>
 
+
+  <!-- List of my scientific publicaitons -->
   <section id="publications" class="py-20 flex flex-col gap-20">
     <div class="flex flex-col gap-2 text-center relative before:absolute before:top-0 before:left-0 before:w-2/3 before:h-1.5 before:bg-violet-700 after:absolute after:bottom-0 after:right-0 after:w-2/3 after:h-1.5 after:bg-violet-700 py-4">
       <h2 class="font-semibold text-3xl sm:text-4xl md:text-6xl text-center">My <span class="poppins text-violet-400">Publications</span></h2>
@@ -175,6 +230,41 @@
         <p><span class="text-violet-400 poppins">Anastasia Kuzmin</span>, Zhiming Han, Michael C. Golding, Mellissa R.W. Mann, Keith E. Latham, and Susannah Varmuza1</p>
       </Publications>
     </div>
+  </section>
+
+
+<!-- Games starting with match game -->
+  <section>
+    <div class="flex flex-col items-center justify-center h-screen bg-gray-900 text-white">
+      <h1 class="text-3xl font-bold mb-4">Match Game</h1>
+      <p class="mb-4">Moves: {moves}</p>
+      <div class="grid grid-cols-4 gap-4">
+        {#each cards as card}
+          <button
+            class="w-16 h-16 flex items-center justify-center text-2xl bg-gray-700 rounded-lg shadow-md transition-transform"
+            on:click={() => selectCard(card)}
+            class:selected={selected.includes(card) || card.matched}
+          >
+            {#if selected.includes(card) || card.matched}
+              {card.value}
+            {:else}
+              ❓
+            {/if}
+          </button>
+        {/each}
+      </div>
+    </div>
+    <button
+    on:click={resetGame}
+    class="mt-6 px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded"
+  >
+    Reset Game
+  </button>
+    <style>
+      .selected {
+        background-color: #38bdf8;
+      }
+    </style>
   </section>
 </main>
 
