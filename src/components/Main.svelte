@@ -1,6 +1,7 @@
 <script>
-  import Step from "../components/Step.svelte"
+  import Step from "./Step.svelte"
   import Publications from "./Publications.svelte";
+  import Matchgame from "./Matchgame.svelte";
 
   // List of website objects
   let steps = [
@@ -80,51 +81,7 @@
       href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2220043/",
       abstract: " In fact, the earliest defects in uniparental embryos are evident first in the extraembryonic trophoblast. We performed a microarray comparison of gynogenetic and androgenetic mouse blastocysts, which are predisposed to placental pathologies, to identify imprinted genes. In addition to identifying a large number of known imprinted genes, we discovered that the Polycomb group (PcG) gene Sfmbt2 is imprinted. Sfmbt2 is expressed preferentially from the paternal allele in early embryos, and in later stage extraembryonic tissues. A CpG island spanning the transcriptional start site is differentially methylated on the maternal allele in e14.5 placenta. Sfmbt2 is located on proximal chromosome 2, in a region known to be imprinted, but for which no genes had been identified until now. This possibly identifies a new imprinted domain within the murine genome. We further demonstrate that murine SFMBT2 protein interacts with the transcription factor YY1, similar to the Drosophila PHO-RC.",
     },
-  ];
-  
-  // Match game
-
-  let initialCards = [
-    { id: 1, value: "🍎", matched: false },
-    { id: 2, value: "🍌", matched: false },
-    { id: 3, value: "🍇", matched: false },
-    { id: 4, value: "🍉", matched: false },
-    { id: 5, value: "🍎", matched: false },
-    { id: 6, value: "🍌", matched: false },
-    { id: 7, value: "🍇", matched: false },
-    { id: 8, value: "🍉", matched: false }
-  ];
-
-  let cards = [];
-  let selected = [];
-  let moves = 0;
-
-  function shuffle(array) {
-    return array.sort(() => Math.random() - 0.5);
-  }
-
-  function resetGame() {
-    cards = shuffle([...initialCards.map(card => ({ ...card }))]); // Reset and shuffle
-    selected = [];
-    moves = 0;
-  }
-
-  function selectCard(card) {
-    if (selected.length < 2 && !selected.includes(card) && !card.matched) {
-      selected = [...selected, card];
-    }
-
-    if (selected.length === 2) {
-      moves++;
-      if (selected[0].value === selected[1].value) {
-        selected[0].matched = true;
-        selected[1].matched = true;
-      }
-      setTimeout(() => (selected = []), 1000);
-    }
-  }
-  resetGame(); // Initialize the game on load
-  
+  ];  
 </script>
 
 
@@ -234,37 +191,18 @@
 
 
 <!-- Games starting with match game -->
-  <section>
-    <div class="flex flex-col items-center justify-center h-screen bg-gray-900 text-white">
-      <h1 class="text-3xl font-bold mb-4">Match Game</h1>
-      <p class="mb-4">Moves: {moves}</p>
-      <div class="grid grid-cols-4 gap-4">
-        {#each cards as card}
-          <button
-            class="w-16 h-16 flex items-center justify-center text-2xl bg-gray-700 rounded-lg shadow-md transition-transform"
-            on:click={() => selectCard(card)}
-            class:selected={selected.includes(card) || card.matched}
-          >
-            {#if selected.includes(card) || card.matched}
-              {card.value}
-            {:else}
-              ❓
-            {/if}
-          </button>
-        {/each}
-      </div>
+  <section id="games" class="py-20 flex flex-col gap-20">
+    <div class="flex flex-col gap-2 text-center relative before:absolute before:top-0 before:left-0 before:w-2/3 before:h-1.5 before:bg-violet-700 after:absolute after:bottom-0 after:right-0 after:w-2/3 after:h-1.5 after:bg-violet-700 py-4">
+      <h2 class="font-semibold text-3xl sm:text-4xl md:text-6xl text-center">Play <span class="poppins text-violet-400">Games</span></h2>
     </div>
-    <button
-    on:click={resetGame}
-    class="mt-6 px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white font-bold rounded"
-  >
-    Reset Game
-  </button>
-    <style>
-      .selected {
-        background-color: #38bdf8;
-      }
-    </style>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10">
+      <Matchgame >        
+      </Matchgame>
+      <Matchgame >        
+      </Matchgame>
+      <Matchgame >        
+      </Matchgame>
+    </div>
   </section>
 </main>
 
