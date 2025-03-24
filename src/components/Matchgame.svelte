@@ -26,6 +26,7 @@
   let interval;
   let gameStarted = false;
 
+
   function shuffle(array) {
     return array.sort(() => Math.random() - 0.5);
   }
@@ -76,7 +77,6 @@
     <h1 class="text-3xl font-bold mb-4">Match Game</h1>
     <p class="mb-4">Moves: {moves}</p>
     <p class="mb-4">Time: {timer} sec</p>
-    
     <div class="grid grid-cols-4 gap-4">
       {#each cards as card}
         <button

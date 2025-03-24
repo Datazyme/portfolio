@@ -2,6 +2,7 @@
   import Step from "./Step.svelte"
   import Publications from "./Publications.svelte";
   import Matchgame from "./Matchgame.svelte";
+  import Guessword from "./Guessword.svelte";
 
   // List of website objects
   let steps = [
@@ -198,8 +199,8 @@
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10">
       <Matchgame >        
       </Matchgame>
-      <Matchgame >        
-      </Matchgame>
+      <Guessword >        
+      </Guessword>
       <Matchgame >        
       </Matchgame>
     </div>
