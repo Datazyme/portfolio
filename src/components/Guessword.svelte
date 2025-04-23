@@ -61,7 +61,7 @@
   });
 </script>
 
-<main class="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white">
+<main class="flex flex-col items-center justify-center bg-gray-900 text-white pr-4 pl-4">
   <h1 class="text-3xl font-bold mb-4">Word Guessing Game</h1>
   <p class="text-lg mb-4">Guess the word letter by letter!</p>
 

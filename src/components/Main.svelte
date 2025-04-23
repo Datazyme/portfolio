@@ -3,6 +3,7 @@
   import Publications from "./Publications.svelte";
   import Matchgame from "./Matchgame.svelte";
   import Guessword from "./Guessword.svelte";
+  import Sudoku from "./Sudoku.svelte";
 
   // List of website objects
   let steps = [
@@ -100,7 +101,7 @@
       </p> 
     </div>
     <div class="relative shadow-2xl grid place-items-center">
-      <img src={"images/logo1.png"} alt="logo1"
+      <img src={"images/greenSpider.png"} alt="greenSpider"
       class="object-cover z-[2] max-h-[70hv]"/>
     </div>
   </section>
@@ -192,17 +193,17 @@
 
 
 <!-- Games starting with match game -->
-  <section id="games" class="py-20 flex flex-col gap-20">
+  <section id="games" class="flex flex-col gap-20">
     <div class="flex flex-col gap-2 text-center relative before:absolute before:top-0 before:left-0 before:w-2/3 before:h-1.5 before:bg-violet-700 after:absolute after:bottom-0 after:right-0 after:w-2/3 after:h-1.5 after:bg-violet-700 py-4">
       <h2 class="font-semibold text-3xl sm:text-4xl md:text-6xl text-center">Play <span class="poppins text-violet-400">Games</span></h2>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10">
-      <Matchgame >        
+      <Matchgame>        
       </Matchgame>
-      <Guessword >        
+      <Guessword>        
       </Guessword>
-      <Matchgame >        
-      </Matchgame>
+      <Sudoku>
+      </Sudoku>
     </div>
   </section>
 </main>

@@ -73,7 +73,7 @@
   
 </script>
 
-<div class="flex flex-col items-center justify-center h-screen bg-gray-900 text-white">
+<div class="flex flex-col items-center justify-center bg-gray-900 text-white">
     <h1 class="text-3xl font-bold mb-4">Match Game</h1>
     <p class="mb-4">Moves: {moves}</p>
     <p class="mb-4">Time: {timer} sec</p>
