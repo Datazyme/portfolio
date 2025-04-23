@@ -92,7 +92,7 @@
   <section id="introPage" class="grid grid-cols-1 lg:grid-cols-2 gap-10 py-8 sm:py-14">
     <div class="flex flex-col lg:justify-center text-center lg:text-left gap-6 md:gap-8 lg:gap-10">
       <h2 class="font-semibold text-4xl sm:text-5xl md:text-6xl">
-       Welcome to <span class="poppins text-violet-400">PortiaBella Designs</span> by Anastasia 
+       Welcome to <span class="poppins text-violet-400">My Portfolio</span> by Anastasia 
       </h2>
       <h2 class="font-semibold text-4xl sm:text-4xl md:text-4xl"><span class="poppins text-violet-400">Full Stack Web Development</span> and More
       </h2>      
@@ -105,6 +105,30 @@
       class="object-cover z-[2] max-h-[70hv]"/>
     </div>
   </section>
+
+<!--About me -->
+<section id="about" class="py-20 lg:py-32 flex flex-col gap-24">
+  <div class="flex flex-col gap-2 text-center relative before:absolute before:top-0 before:left-0 before:w-2/3 before:h-1.5 before:bg-violet-700 after:absolute after:bottom-0 after:right-0 after:w-2/3 after:h-1.5 after:bg-violet-700 py-4">
+    <h2 class="font-semibold text-3xl sm:text-4xl md:text-6xl text-center">About <span class="poppins text-violet-400">Me</span></h2>
+  </div>
+  <div>
+    <p class="text-base sm:text-lg md:text-2xl">
+      I have spent over 20 years working in the field of molecular biology and genetics. I began by completing a Bachelors degree in Genetics and Microbiology and after working a few years, I completed Masters degree in neuroscience.  I worked in diverse fields such as evolution, human disease and microbiology. It was so exciting to be part of frontline research,  exploring new ideas and adding another piece of the great puzzle of nature to our understanding. 
+      My contribution resulted in authorship on a number of peer reviewed journal publications.  
+    </p>
+  </div>
+  <div>
+    <p class="text-base sm:text-lg md:text-2xl poppins text-violet-400">
+      Lately I have turned my attention to website design. I completed a diploma in Web Development from Lighthouse Labs and now use those skills to create websites featuring topics that I find interesting. I love combining the technical aspects of web design with artistic design. The diversity of frameworks and libraries available for website design provides an endless supply of learning opportunities, new technologies to explore and lots of fun.
+    </p>
+  </div>
+  <div>
+    <p class="text-base sm:text-lg md:text-2xl">
+      In my spare time I enjoy many hobbies. Hiking here is amazing and is one of my favourite activities. I love photographing the beautiful places and creatures I encounter and sharing my favourites on Instagram.  I also enjoy researching mushrooms, creating digital illustrations and knitting to name a few more. I speak English and Russian fluently and enjoy reading literature in both languages.
+    </p>
+  </div>
+
+</section>
 
 <!--List of my website projects -->
   <section id="projects" class="py-20 lg:py-32 flex flex-col gap-24">
