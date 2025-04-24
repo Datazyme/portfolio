@@ -11,7 +11,7 @@
   y > 0 ? 'py-4 bg-slate-950 border-violet-950' : "py-6 bg-transparent border-transparent"
 )}>
   <h1 class="font-medium">
-    <b class="font-bold poppins sm:text-lg md:text-4xl poppins text-violet-200">Anastasia</b>
+    <b class="font-bold poppins sm:text-lg md:text-4xl poppins text-violet-200">AK</b>
   </h1>
   <div class="sm:flex items-center gap-4 hidden sm:text-lg md:text-2xl">
     {#each tabs as tab, index} 
@@ -19,8 +19,12 @@
       <p>{tab.name}</p></a>{/each}
   </div>
   <a href="https://www.linkedin.com/in/anastasia-kuzmin-b6456a287" target="_blank" class="blueShadow relative overflow-hidden px-5 py-2 group rounded-full bg-white text-slate-950">
-    <div class="absolute top-0 right-full w-full h-full bg-violet-400 opacity-20 group-hover:translate-x-full z-0 duration-200"></div>
-    <h4 class="relative z-9">Get in touch</h4>
+    <div class="absolute top-0 right-full w-full h-full bg-violet-400 opacity-80 group-hover:translate-x-full z-0 duration-200"></div>
+    <h4 class="relative z-9">LinkedIn</h4>
+  </a>
+  <a href="https://www.instagram.com/leafskywaterfungi/" target="_blank">
+    <img class="h-12 w-12 object-scale-down" src={"images/instagram.png"} alt="instagram"
+    />
   </a>
 </header>
 
