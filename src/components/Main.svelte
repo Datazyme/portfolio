@@ -24,7 +24,7 @@
     {
       name: "Simon Fraser University",
       description:
-        "Master of Science.",
+        "Master of Science",
     },
     {
       name: "University of Toronto",

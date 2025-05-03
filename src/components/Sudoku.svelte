@@ -115,7 +115,7 @@
     <!-- Reset Button -->
     <button
       on:click={resetGame}
-      class="mt-4 px-4 py-2 bg-red-500 hover:bg-red-700 text-white font-bold rounded"
+      class="mt-4 px-4 py-2 bg-blue-500 hover:bg-red-700 text-white font-bold rounded"
     >
       Reset Game
     </button>
